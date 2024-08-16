@@ -1,5 +1,11 @@
 # Project for Data Scientist Beginner
 
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Setup](#setup)
+3. [Implemented Features](#implemented-features)
+4. [Status of Project](#status-of-project)
+
 ## Introduction
 The objective of this project is to address several tasks typical for a data scientist working with the PTB-XL dataset. As my first project, I have encountered challenges such as noise filtering and anomaly detection in ECG signals. My goal is to demonstrate basic skills and problem-solving abilities with the help of tools like ChatGPT and the StackOverflow community.
 
