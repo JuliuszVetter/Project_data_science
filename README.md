@@ -36,7 +36,7 @@ This project requires the PTB-XL dataset to be installed on your local machine. 
    - The next step is to create a mask to identify the data points within these bounds.
    
    - Finally, the function returns a cleaned version of the signal, containing only the data points that lie within the calculated bounds.
-### 2. `load_and_plot_record` Function Overview
+2. `load_and_plot_record` Function Overview
 
 The `load_and_plot_record` function is created to visualize data — specifically, ECG signals. It performs the following steps:
 - **Path Construction:**  
