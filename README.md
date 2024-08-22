@@ -37,6 +37,29 @@ This project requires the PTB-XL dataset to be installed on your local machine. 
    
    - Finally, the function returns a cleaned version of the signal, containing only the data points that lie within the calculated bounds.
 2. 'load_and_plot_record' is a function created in order to visualize data - ECG signals.
+- **Path Construction:**  
+   The function constructs the file paths for the `.dat` and `.hea` files associated with the ECG record based on the provided folder path, subfolder, and record name.
+
+- **File Existence Check:**  
+   It verifies whether the required `.dat` and `.hea` files exist. If either file is missing, an appropriate error message is printed, and the function exits.
+
+- **Load ECG Record:**  
+   Using the `wfdb` library, the function loads the ECG record, specifying the channels to be read. It prints key information about the record, including the record name, number of signals, sampling frequency, and signal length.
+
+- **Clean Signals:**  
+   Each signal in the record is cleaned by removing outliers using the previously made `remove_outliers` function. Signals that have been successfully cleaned are collected for further processing.
+
+- **Trim Signals:**  
+   The function trims all cleaned signals to the length of the shortest signal to ensure uniformity across all signals.
+
+- **Prepare for Plotting:**  
+   The cleaned signals are converted from a list to a NumPy array for easier manipulation and plotting.
+
+- **Plot Signals:**  
+   For each cleaned signal, the function generates a plot using the 'plot()' function from the Matplotlib library. The plot displays the ECG signal's amplitude over time, with appropriate labels and titles.
+
+- **Error Handling:**  
+   Any exceptions encountered during the loading, cleaning, or plotting process are caught, and an error message is printed.
 
 ## Status of Project
 The project has been theoretically completed, except for one non-functioning part of the code. For this reason, it may be updated in the near future to fix the malfunctioning code or to add new functionalities. This largely depends on the vision of my supervisor, whom I would like to thank for their time, motivation, and overall support. I also hope to have the opportunity to demonstrate my skills in a much better way, as I do not believe this project showcased my abilities as well as I would have liked.
