@@ -4,7 +4,8 @@
 1. [Introduction](#introduction)
 2. [Setup](#setup)
 3. [Implemented Features](#implemented-features)
-4. [Status of Project](#status-of-project)
+4. [Process and Execution](#process-and-execution)
+5. [Status of Project](#status-of-project)
 
 ## Introduction
 The objective of this project is to address several tasks typical for a data scientist working with the PTB-XL dataset. As my first project, I have encountered challenges such as noise filtering and anomaly detection in ECG signals. My goal is to demonstrate basic skills and problem-solving abilities with the help of tools like ChatGPT and the StackOverflow community.
@@ -30,12 +31,12 @@ This project requires the PTB-XL dataset to be installed on your local machine. 
    
    - The function then calculates the lower and upper bounds using the IQR and a specified threshold (default is 1.5). These bounds define the acceptable range for data points:
      - **Lower Bound:** `Q1 - (IQR * threshold)`
-     - **Upper Bound:** `Q3 + (IQR * threshold)`
+     - **Upper Bound:** `Q3 + (IQR * threshold).`
 
    - The next step is to create a mask to identify the data points within these bounds.
    
    - Finally, the function returns a cleaned version of the signal, containing only the data points that lie within the calculated bounds.
-
+2. 'load_and_plot_record' is a function created in order to visualize data - ECG signals.
 
 ## Status of Project
 The project has been theoretically completed, except for one non-functioning part of the code. For this reason, it may be updated in the near future to fix the malfunctioning code or to add new functionalities. This largely depends on the vision of my supervisor, whom I would like to thank for their time, motivation, and overall support. I also hope to have the opportunity to demonstrate my skills in a much better way, as I do not believe this project showcased my abilities as well as I would have liked.
