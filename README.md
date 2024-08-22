@@ -23,8 +23,8 @@ This project requires the PTB-XL dataset to be installed on your local machine. 
 
 ## Process and Execution
 1. The 'remove_outliers' function is designed to filter out outliers from a given signal based on the Interquartile Range (IQR) method. It works in a following way: The function calculates the first quartile (Q1) and the third quartile (Q3) of the signal, which represent the 25th and 75th percentiles, respectively. These quartiles help identify the central portion of the data. Next, the Interquartile Range (IQR) is computed as the difference between Q3 and Q1. The IQR measures the spread of the middle 50% of the data. The function then calculates the lower and upper bounds using the IQR and a specified threshold (default is 1.5). These bounds define the acceptable range for data points:
-    Lower Bound: Q1 - (IQR * threshold)
-    Upper Bound: Q3 + (IQR * threshold).
+   - **Lower Bound:** `Q1 - (IQR * threshold)`
+   - **Upper Bound:** `Q3 + (IQR * threshold)`
 Next step is to create a mask to identify the data points within these bounds. In the end the function returns a cleaned version of the signal, containing only the data points that lie within the calculated bounds.
 
 
