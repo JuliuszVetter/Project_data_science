@@ -36,9 +36,7 @@ This project requires the PTB-XL dataset to be installed on your local machine. 
    - The next step is to create a mask to identify the data points within these bounds.
    
    - Finally, the function returns a cleaned version of the signal, containing only the data points that lie within the calculated bounds.
-2. `load_and_plot_record` Function Overview
-
-The `load_and_plot_record` function is created to visualize data — specifically, ECG signals. It performs the following steps:
+2. The `load_and_plot_record` function is created to visualize data — specifically, ECG signals. It performs the following steps:
 - **Path Construction:**  
    The function constructs the file paths for the `.dat` and `.hea` files associated with the ECG record based on the provided folder path, subfolder, and record name.
 
@@ -62,6 +60,8 @@ The `load_and_plot_record` function is created to visualize data — specificall
 
 - **Error Handling:**  
    Any exceptions encountered during the loading, cleaning, or plotting process are caught, and an error message is printed.
+This is an example of result of the function. Note that this is only one of twelve plots, because each record has twelve chanals. ![Image with ECG](images/1proj1.png)
+ 
 
 ## Status of Project
 The project has been theoretically completed, except for one non-functioning part of the code. For this reason, it may be updated in the near future to fix the malfunctioning code or to add new functionalities. This largely depends on the vision of my supervisor, whom I would like to thank for their time, motivation, and overall support. I also hope to have the opportunity to demonstrate my skills in a much better way, as I do not believe this project showcased my abilities as well as I would have liked.
