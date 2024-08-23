@@ -101,7 +101,8 @@ Signal Segmentation:
 The 'segment_signal' function segments the ECG signal into heart cycles around detected R-peaks. It uses the 'window_size' parameter to determine the length of each segment. Segments are extracted based on the locations of R-peaks, ensuring that each segment contains a full heart cycle.
 Visualization of Results:
 
-The 'load_segment_and_plot_record' function displays plots for each segment, allowing for visual assessment of the segmentation results, for example: <a name="im4"></a>![Image with segment ECG](images/1proj4.png)  
+The 'load_segment_and_plot_record' function displays plots for each segment, allowing for visual assessment of the segmentation results, for example:
+<a name="im4"></a>![Image with segment ECG](images/1proj4.png)  
 *Fig.3: One of twelve chanals segment.*
 
 
