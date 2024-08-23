@@ -91,17 +91,14 @@ This is an example of result of the function. Note that this is only one of twel
 *Fig.3: One of twelve filtered signals.*  
 Since we used the same record example as in [Figure 1](#im1), we can conclude that the signal is indeed smoother than before.
 6. As part of the project, ECG signal segmentation was performed to analyze heart cycles. This segmentation allows for the extraction of individual heart cycles from the full ECG signal, which is needed for further analysis and processing. The segmentation process is implemented using several key functions in Python:
-  
 R-Peak Detection:
 
     The 'detect_r_peaks' function is used to detect R-peaks in the ECG signal. The R-peak is a crucial component in ECG analysis, representing the ventricular contraction of the heart. This process involves:
 Normalizing the signal to mitigate differences in amplitude.
 Using the 'find_peaks' function from the 'scipy.signal' library to identify peaks corresponding to R-peaks. The 'distance' parameter sets the minimum distance between peaks, while 'height' defines the minimum peak height.
-
 Signal Segmentation:
 
-    The 'segment_signal' function segments the ECG signal into heart cycles around detected R-peaks. It uses the 'window_size' parameter to determine the length of each segment. Segments are extracted based on the locations of R-peaks, ensuring that each segment contains a full heart cycle.
-    
+    The 'segment_signal' function segments the ECG signal into heart cycles around detected R-peaks. It uses the 'window_size' parameter to determine the length of each segment. Segments are extracted based on the locations of R-peaks, ensuring that each segment contains a full heart cycle. 
 Visualization of Results:
 
     The 'load_segment_and_plot_record' function displays plots for each segment, allowing for visual assessment of the segmentation results, for example:
