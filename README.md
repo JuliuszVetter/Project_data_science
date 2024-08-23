@@ -70,20 +70,14 @@ This project requires the PTB-XL dataset to be installed on your local machine. 
 
 - **Error Handling:**  
    Any exceptions encountered during the loading, cleaning, or plotting process are caught, and an error message is printed.
-This is an example of result of the function. Note that this is only one of twelve plots, because each record has twelve chanals. <a name="im1"></a>
-![Image with ECG](images/1proj1.png)
-<figcaption>Fig.1: One of twelve signals.</figcaption>
+This is an example of result of the function. Note that this is only one of twelve plots, because each record has twelve chanals.<a name="im1"></a>![Image with ECG](images/1proj1.png)*Fig.1: One of twelve signals.*
 3. Afterwards, the 'check_missing_values_in_signals' function was created. Its purpose is to check whether some of the data are missing (NaN) based on NumPy's 'np.isnan()' function, which verifies if the values are present or not. Depending on the outcome, an appropriate message is printed. This function is then applied to each ECG record in the dataset. The script iterates through all records in the specified directories, loads each record, and uses the 'check_missing_values_in_signals' function to identify any records containing missing values. Upon activation of the code, no messages were printed, indicating that there are no missing values in the dataset. This result was expected and is positive, as it means there are no missing values to handle or clean.
 4. The next task was to classify health conditions based on ECG signals. To do this, a new `diagnosis` column was added to metadata and the `map_scp_to_diagnosis_weighted` function is responsible for that. Mentioned column is based on the `scp_codes` one and its purpose is to disclose the health condition of examined people. It is worth noting that all information is already included in the `scp_codes` column; however, the values are coded, so they are difficult to read.
 
    First, the `scp_to_diagnosis` dictionary maps SCP codes to human-readable diagnoses. For example, the NORM code corresponds to the diagnosis "healthy," and MI corresponds to "heart attack."
 
    The `map_scp_to_diagnosis_weighted` function takes a dictionary of `scp_codes`, where the keys are SCP codes, and the values are the weights indicating the significance of each code for the record. Note that every value in the `scp_codes` column is a dictionary of diverse lengths, in which every ailment has an assigned value. The following picture illustrates this fact:
-   <a name="im2"></a>
-<figure>
-  <img src="images/1proj2.png" alt="Image with metadata" style="width:100%; max-width:600px;">
-  <figcaption>*Fig.2: Some of metadata.*</figcaption>
-</figure>
+<a name="im2"></a>![Image with metadata](images/1proj2.png)*Fig.2: Some of metadata.*
    The function iterates through all SCP codes in the record. For each code, it checks if it exists in the `scp_to_diagnosis` dictionary and compares its weight with the highest weight encountered so far. If the SCP code is present in the dictionary and its weight is greater than the previously encountered weight, the function updates the assigned diagnosis and records the new highest weight. If none of the codes have a significant weight or are not found in the dictionary, the function returns the default value "other". In cases where a record has two or more keys with identical and the highest values, only the first encountered one is considered, which might be a simplification. The function returns the diagnosis with the highest weight among the SCP codes associated with the record.
    Next, the `load_and_clean_record` function was applied. It operates similarly to `load_and_plot_record`, but it does not plot.
 
@@ -92,13 +86,10 @@ This is an example of result of the function. Note that this is only one of twel
    The function then iterates through all records in the `metadata_df` DataFrame, which contains information about the ECG signals, such as filenames and assigned diagnoses. For each record, the function constructs the full path to the corresponding ECG signal file using the filename stored in the `filename_lr` column and the provided folder path. The function then attempts to load the ECG signal using the `load_and_clean_record` function. If the signal is successfully loaded and processed (i.e., it is not None), the signal is "flattened" into a single feature vector and added to the `X` list. The diagnosis label corresponding to the signal is added to the `y` list. After processing all records, the function returns `X` and `y` as NumPy arrays, ready for use in a machine learning model.
 
    Data was then split into 80% training and 20% test parts and normalized. Next, a RandomForest model was used, as it is known for its versatility, popularity, and stability. Unfortunately, this task did not end well due to an error that occurred in the code, which I was unable to resolve.
-5. When it comes to noise filtering, a simple function called 'moving_average' is responsible for this. The function involves smoothing the signal using the moving average method. It is based on Numpy's function 'np.convolve', which calculates the average of the signal and its four closest neighbors, controlled by the 'window_size' parameter. The number of points used to calculate the average can be changed by decreasing or increasing the 'window_size' parameter, which leads to smaller or greater smoothing of the signal, respectively. However, 'window_size' should be an odd number and should not be too large, as it might cause a loss of information. Afterwards, the signal is normalized and plotted with 'load_and_plot_record'. The following image shows the result:
-<figure>
-  <img src="images/1proj3.png" alt="Image with ECG" style="width:100%; max-width:600px;">
-  <figcaption>*Fig.3: One of twelve filtered signals.*</figcaption>
-</figure>
+5. When it comes to noise filtering, a simple function called 'moving_average' is responsible for this. The function involves smoothing the signal using the moving average method. It is based on Numpy's function 'np.convolve', which calculates the average of the signal and its four closest neighbors, controlled by the 'window_size' parameter. The number of points used to calculate the average can be changed by decreasing or increasing the 'window_size' parameter, which leads to smaller or greater smoothing of the signal, respectively. However, 'window_size' should be an odd number and should not be too large, as it might cause a loss of information. Afterwards, the signal is normalized and plotted with 'load_and_plot_record'. The following image shows the result:  
+<a name="im3"></a>![Image with ECG](images/1proj3.png)  
+*Fig.3: One of twelve filtered signals.*  
 Since we used the same record example as in [Figure 1](#im1), we can conclude that the signal is indeed smoother than before.
-
 
 ## Status of Project
 The project has been theoretically completed, except for one non-functioning part of the code. For this reason, it may be updated in the near future to fix the malfunctioning code or to add new functionalities. This largely depends on the vision of my supervisor, whom I would like to thank for their time, motivation, and overall support. I also hope to have the opportunity to demonstrate my skills in a much better way, as I do not believe this project showcased my abilities as well as I would have liked.
