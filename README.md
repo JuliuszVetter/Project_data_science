@@ -13,12 +13,12 @@ The objective of this project is to address several tasks typical for a data sci
 
 ## Technologies
 The project has been created in Python 3.8.5 in Jupyter Notebook environment. Following libraries with versions were used:
-Pandas 1.1.3
-Numpy 1.21.0
-Matplotlib 3.3.2
-Scikit-learn 0.23.2
-Wfdb 4.1.2
-Scipy 1.5.2
+- Pandas 1.1.3
+- Numpy 1.21.0
+- Matplotlib 3.3.2
+- Scikit-learn 0.23.2
+- Wfdb 4.1.2
+- Scipy 1.5.2.
 
 ## Setup
 This project requires the PTB-XL dataset to be installed on your local machine. You can download it from [PhysioNet](https://physionet.org/content/ptb-xl/1.0.3/). The code for this project is located in the file named `projekt1.ipynb` within this repository. To ensure the code functions correctly, update the `data_folder_path` variable in the code to match the directory where your dataset is stored.
