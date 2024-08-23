@@ -71,11 +71,8 @@ This project requires the PTB-XL dataset to be installed on your local machine. 
 - **Error Handling:**  
    Any exceptions encountered during the loading, cleaning, or plotting process are caught, and an error message is printed.
 This is an example of result of the function. Note that this is only one of twelve plots, because each record has twelve chanals. <a name="im1"></a>
-<figure>
-  <img src="images/1proj1.png" alt="Image with ECG" style="width:100%; max-width:600px;">
-  <figcaption>*Fig.1: One of twelve signals.*</figcaption>
-</figure>
-
+![Image with ECG](images/1proj1.png)
+<figcaption>Fig.1: One of twelve signals.</figcaption>
 3. Afterwards, the 'check_missing_values_in_signals' function was created. Its purpose is to check whether some of the data are missing (NaN) based on NumPy's 'np.isnan()' function, which verifies if the values are present or not. Depending on the outcome, an appropriate message is printed. This function is then applied to each ECG record in the dataset. The script iterates through all records in the specified directories, loads each record, and uses the 'check_missing_values_in_signals' function to identify any records containing missing values. Upon activation of the code, no messages were printed, indicating that there are no missing values in the dataset. This result was expected and is positive, as it means there are no missing values to handle or clean.
 4. The next task was to classify health conditions based on ECG signals. To do this, a new `diagnosis` column was added to metadata and the `map_scp_to_diagnosis_weighted` function is responsible for that. Mentioned column is based on the `scp_codes` one and its purpose is to disclose the health condition of examined people. It is worth noting that all information is already included in the `scp_codes` column; however, the values are coded, so they are difficult to read.
 
