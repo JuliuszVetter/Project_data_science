@@ -103,7 +103,7 @@ Using the 'find_peaks' function from the 'scipy.signal' library to identify peak
 
     The 'load_segment_and_plot_record' function displays plots for each segment, allowing for visual assessment of the segmentation results, for example:
     <a name="im4"></a>![Image with segment ECG](images/1proj4.png)  
-*Fig.3: One of twelve chanals segment.*
+*Fig.3: One of twelve channels segment.*
 
 
 ## Status of Project
