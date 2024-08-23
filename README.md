@@ -2,13 +2,23 @@
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Setup](#setup)
-3. [Implemented Features](#implemented-features)
-4. [Process and Execution](#process-and-execution)
-5. [Status of Project](#status-of-project)
+2. [Technologies](#technologies)
+3. [Setup](#setup)
+4. [Implemented Features](#implemented-features)
+5. [Process and Execution](#process-and-execution)
+6. [Status of Project](#status-of-project)
 
 ## Introduction
 The objective of this project is to address several tasks typical for a data scientist working with the PTB-XL dataset. As my first project, I have encountered challenges such as noise filtering and anomaly detection in ECG signals. My goal is to demonstrate basic skills and problem-solving abilities with the help of tools like ChatGPT and the StackOverflow community.
+
+## Technologies
+The project has been created in Python 3.8.5 in Jupyter Notebook environment. Following libraries with versions were used:
+Pandas 1.1.3
+Numpy 1.21.0
+Matplotlib 3.3.2
+Scikit-learn 0.23.2
+Wfdb 4.1.2
+Scipy 1.5.2
 
 ## Setup
 This project requires the PTB-XL dataset to be installed on your local machine. You can download it from [PhysioNet](https://physionet.org/content/ptb-xl/1.0.3/). The code for this project is located in the file named `projekt1.ipynb` within this repository. To ensure the code functions correctly, update the `data_folder_path` variable in the code to match the directory where your dataset is stored.
