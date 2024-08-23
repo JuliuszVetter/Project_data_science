@@ -105,7 +105,12 @@ Using the 'find_peaks' function from the 'scipy.signal' library to identify peak
     <a name="im4"></a>![Image with segment ECG](images/1proj4.png)  
 *Fig.3: One of twelve channels segment.*
 
-7. Anomaly detection in ECG signals was made in a very simple way. It consist on 'detect_anomalies' function, which calculates mean value and standard deviation of a signal. The function checks which values of the signal deviate from the mean by more than a specified threshold (in this case, three times the standard deviation). These values are considered anomalies. As often before next function 'load_detect_and_plot_record' plots the signal and anomalies on the same plot. Here is an example.
+7. Anomaly detection in ECG signals was implemented in a very simple way. It consists of the detect_anomalies function, which calculates the mean value and standard deviation of the signal. The function checks which values of the signal deviate from the mean by more than a specified threshold (in this case, three times the standard deviation). These values are considered anomalies. As before, the next function, load_detect_and_plot_record, plots the signal and anomalies on the same plot.
+
+    While the detect_anomalies function is efficient and easy to use, it may be less effective in more complex scenarios where the signal exhibits trends, seasonality, or non-Gaussian distributions. In such cases, more advanced techniques may be required to improve the accuracy of anomaly detection.
+Here is an example:
+<a name="im5"></a>![Image signal and anomalies](images/1proj5.png)  
+*Fig.3: Signal with detected anomalies.*
 
 
 ## Status of Project
