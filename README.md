@@ -111,6 +111,10 @@ Using the 'find_peaks' function from the 'scipy.signal' library to identify peak
     
     While the 'detect_anomalies' function is efficient and easy to use, it may be less effective in more complex scenarios where the signal exhibits trends, seasonality, or non-Gaussian distributions. In such cases, more advanced techniques may be required to improve the accuracy of anomaly detection.
 
+8. Feature extraction and their anomalies was subsequent part of the project.The RR interval feature - the time intervals between successive R-peaks detected in the signal - was considered. The 'extract_rr_intervals' function is responsible for that. It uses earlier mentioned 'detect_r_peaks' function, which provide numpy array with R-peaks indexes what is used to obtain segments. Later on new 'detect_anomalies' function uses this signals by calculating their mean and standard deviation. RR interval is treated as anamaly, if diffrence between signal and mean is greater then standard deviation multiplied by threshold, which default value is three. In the end 'load_extract_and_detect_anomalies' function displays RR intervals and their anamalies as shown below:
+<a name="im6"></a>![ Signal features and anomalies](images/1proj6.png)  
+*Fig.3: RR intervals.* 
+
 
 ## Status of Project
 The project has been theoretically completed, except for one non-functioning part of the code. For this reason, it may be updated in the near future to fix the malfunctioning code or to add new functionalities. This largely depends on the vision of my supervisor, whom I would like to thank for their time, motivation, and overall support. I also hope to have the opportunity to demonstrate my skills in a much better way, as I do not believe this project showcased my abilities as well as I would have liked.
