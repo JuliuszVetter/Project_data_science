@@ -114,7 +114,7 @@ Using the 'find_peaks' function from the 'scipy.signal' library to identify peak
 8. Feature extraction and their anomalies were the subsequent part of the project. The RR interval feature - the time intervals between successive R-peaks detected in the signal - was the focus. The 'extract_rr_intervals' function is responsible for this. It uses the previously mentioned 'detect_r_peaks' function, which provides a NumPy array with R-peak indices, which are then used to obtain RR intervals. The new 'detect_anomalies' function then analyzes these intervals by calculating their mean and standard deviation. An RR interval is treated as an anomaly, if the difference between the interval and the mean is greater than the standard deviation multiplied by the threshold, which defaults to three. Finally, the 'load_extract_and_detect_anomalies' function displays RR intervals and their anomalies as shown below:
 
     <a name="im6"></a>![ Signal features and anomalies](images/1proj6.png)  
-*Fig.3: RR intervals.* 
+*Fig.3: RR intervals with their anomalies.* 
 
 
 ## Status of Project
