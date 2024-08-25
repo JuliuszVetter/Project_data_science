@@ -116,11 +116,9 @@ Using the 'find_peaks' function from the 'scipy.signal' library to identify peak
     <a name="im6"></a>![ Signal features and anomalies](images/1proj6.png)  
 *Fig.3: RR intervals with their anomalies.*
 
-9. ## Comparison of Signal Detection Algorithms
+9. In last part of the project, we compare the effectiveness of two algorithms for detecting R-peaks in ECG signals. R-peaks are crucial elements in the analysis of electrocardiographic (ECG) signals as they represent the ventricular contractions of the heart. The two methods compared are:
 
-In this part of the project, we compare the effectiveness of two algorithms for detecting R-peaks in ECG signals. R-peaks are crucial elements in the analysis of electrocardiographic (ECG) signals as they represent the ventricular contractions of the heart. The two methods compared are:
-
-### 1. Peak Detection
+#### 1. Peak Detection
 
 The first algorithm is based on simple peak detection. It uses the `find_peaks` function from the `scipy.signal` library to search for local maxima in the signal. The key parameters for this method are:
 
@@ -129,7 +127,7 @@ The first algorithm is based on simple peak detection. It uses the `find_peaks` 
 
 This method is straightforward and fast, but it may be less robust against noise in the signal.
 
-### 2. Differentiation and Thresholding
+#### 2. Differentiation and Thresholding
 
 The second algorithm uses signal differentiation, which emphasizes sudden changes, such as those associated with R-peaks. After differentiating the signal, R-peaks are detected by applying a threshold. The key parameter for this method is:
 
@@ -137,7 +135,7 @@ The second algorithm uses signal differentiation, which emphasizes sudden change
 
 The differentiation method is more complex but often more resilient to amplitude variations and noise, making it potentially more reliable under challenging conditions.
 
-### Visual Comparison
+#### Visual Comparison
 
 For each algorithm, we conducted a visual comparison of the R-peak detection results on the same ECG signal. The plots below illustrate the signal with marked R-peaks for both methods:
 
