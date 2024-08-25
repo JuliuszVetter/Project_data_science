@@ -145,7 +145,8 @@ For each algorithm, we conducted a visual comparison of the R-peak detection res
 These plots are displayed side by side, allowing for an easy comparison of the effectiveness of both methods on the same signal.
     <a name="im7"></a>![R-Peak Detection Comparison](images/1proj7.png)  
 *Fig.3: R-Peak Detection Comparison.*
-    Comparing R-peak detection algorithms is crucial in the context of ECG signal analysis, as different methods may perform differently depending on the characteristics of the signals. Choosing the appropriate algorithm may depend on the specific conditions of the signal and the accuracy requirements of the detection process.
+
+   Comparing R-peak detection algorithms is crucial in the context of ECG signal analysis, as different methods may perform differently depending on the characteristics of the signals. Choosing the appropriate algorithm may depend on the specific conditions of the signal and the accuracy requirements of the detection process.
 
 
 
