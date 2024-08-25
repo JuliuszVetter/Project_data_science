@@ -114,7 +114,42 @@ Using the 'find_peaks' function from the 'scipy.signal' library to identify peak
 8. Feature extraction and their anomalies were the subsequent part of the project. The RR interval feature - the time intervals between successive R-peaks detected in the signal - was the focus. The 'extract_rr_intervals' function is responsible for this. It uses the previously mentioned 'detect_r_peaks' function, which provides a NumPy array with R-peak indices, which are then used to obtain RR intervals. The new 'detect_anomalies' function then analyzes these intervals by calculating their mean and standard deviation. An RR interval is treated as an anomaly, if the difference between the interval and the mean is greater than the standard deviation multiplied by the threshold, which defaults to one. Finally, the 'load_extract_and_detect_anomalies' function displays RR intervals and their anomalies as shown below:
 
     <a name="im6"></a>![ Signal features and anomalies](images/1proj6.png)  
-*Fig.3: RR intervals with their anomalies.* 
+*Fig.3: RR intervals with their anomalies.*
+
+9. ## Comparison of Signal Detection Algorithms
+
+In this part of the project, we compare the effectiveness of two algorithms for detecting R-peaks in ECG signals. R-peaks are crucial elements in the analysis of electrocardiographic (ECG) signals as they represent the ventricular contractions of the heart. The two methods compared are:
+
+### 1. Peak Detection
+
+The first algorithm is based on simple peak detection. It uses the `find_peaks` function from the `scipy.signal` library to search for local maxima in the signal. The key parameters for this method are:
+
+- **distance**: The minimum distance between consecutive peaks, which helps prevent noise from being detected as peaks.
+- **height**: The minimum height that a peak must reach to be considered an R-peak.
+
+This method is straightforward and fast, but it may be less robust against noise in the signal.
+
+### 2. Differentiation and Thresholding
+
+The second algorithm uses signal differentiation, which emphasizes sudden changes, such as those associated with R-peaks. After differentiating the signal, R-peaks are detected by applying a threshold. The key parameter for this method is:
+
+- **threshold**: The threshold that must be exceeded for a point to be considered an R-peak.
+
+The differentiation method is more complex but often more resilient to amplitude variations and noise, making it potentially more reliable under challenging conditions.
+
+### Visual Comparison
+
+For each algorithm, we conducted a visual comparison of the R-peak detection results on the same ECG signal. The plots below illustrate the signal with marked R-peaks for both methods:
+
+- **First plot**: R-peak detection using the Peak Detection method.
+- **Second plot**: R-peak detection using the Differentiation and Thresholding method.
+
+These plots are displayed side by side, allowing for an easy comparison of the effectiveness of both methods on the same signal.
+    <a name="im7"></a>![R-Peak Detection Comparison](images/1proj7.png)  
+*Fig.3: R-Peak Detection Comparison.*
+
+    Comparing R-peak detection algorithms is crucial in the context of ECG signal analysis, as different methods may perform differently depending on the characteristics of the signals. Choosing the appropriate algorithm may depend on the specific conditions of the signal and the accuracy requirements of the detection process.
+
 
 
 ## Status of Project
